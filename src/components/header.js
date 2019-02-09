@@ -30,9 +30,10 @@ const Header = ({ siteTitle }) => (
             textDecoration: `none`,
           }}
         >
-          <img style={{
+          {/*<img style={{
             width: '100px'
-          }} src={gatsbyLogo} alt="Logo" />
+          }} src={gatsbyLogo} alt="Logo" />*/}
+          Home
         </Link>
       </h1>
     </HeaderContainer>
