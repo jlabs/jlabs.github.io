@@ -1,10 +1,12 @@
 module.exports = {
     siteMetadata: {
-        title: `jLabs.io`,
+        title: `jLabs`,
         description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
         author: `@labs_`,
+        siteUrl: "https://awesome-spence-8103de.netlify.com"
     },
     plugins: [
+        `gatsby-plugin-sitemap`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-sharp`,
@@ -38,6 +40,7 @@ module.exports = {
             },
         },
         'gatsby-transformer-remark',
+        `gatsby-plugin-netlify-cms`,
         `gatsby-plugin-netlify`
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.app/offline
