@@ -18,8 +18,16 @@ main {
   height: 100vh;
 }
 
-main article {
-  width: 30vw;
+@media (min-width: 320px) {
+  main article {
+    width: 90vw;
+  }
+}
+
+@media (min-width: 576px) {
+  main article {
+    width: 50vw;
+  }
 }
 
 main article header {
@@ -30,7 +38,7 @@ main article header {
 
 main article img {
   text-align: center;
-  width: 30vw;
+  width: 100%;
 }
 
 main article p {
