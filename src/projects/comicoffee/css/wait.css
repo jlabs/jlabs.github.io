@@ -1,0 +1,51 @@
+body {
+  background-color: #A81715;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  color: #cdcdcd;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+main article {
+  width: 30vw;
+}
+
+main article header {
+  text-align: right;
+  margin-bottom: 6px;
+  padding-right: 10px;
+}
+
+main article img {
+  text-align: center;
+  width: 30vw;
+}
+
+main article p {
+  text-align: left;
+  padding-left: 18px;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+}
+
+main article footer {
+  text-align: center;
+}
+
+main article footer i {
+  color: white;
+  font-size: 1.5em;
+}
+/*# sourceMappingURL=wait.css.map */
