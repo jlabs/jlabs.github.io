@@ -1,0 +1,445 @@
+    @import url(//fonts.googleapis.com/css?family=Patrick+Hand+SC|Bangers|Happy+Monkey);
+    @import 'colours';
+    @import 'screenSizes';
+     :root {
+        --header-height: 4em;
+        --subheading-height: 0.8em;
+        // COLOURS
+        --colour-ccRed: #A81715;
+        --colour-ccGray: #707070;
+        --color-offWhite: #cdcdcd;
+        // FONT SIZES
+        --body-fontSize: 0.8em;
+        // PADDING AND MARGINS
+        --panel-padding-title: 6px;
+    }
+    
+    @media screen and (max-width: 549px) {
+         :root {
+            --panelTitle__fontSize: 1.6rem;
+            --panelBody__fontSize: 0.8rem;
+        }
+    }
+    
+    @media screen and (min-width: 550px) {
+         :root {
+            --panelTitle__fontSize: 1.8rem;
+            --panelBody__fontSize: 1rem;
+        }
+    }
+    
+    @media screen and (min-width: 700px) {
+         :root {
+            --panelTitle__fontSize: 2rem;
+            --panelBody__fontSize: 1rem;
+        }
+    }
+    
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        height: 100%;
+        min-width: 360px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 0;
+        color: $panelBackground;
+        background: #eee;
+        //font-family: "Avenir Next", "Avenir", sans-serif;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.8rem;
+        @include xs {
+            font-size: 1rem;
+        }
+        @include sm {
+            font-size: 1.2rem;
+        }
+        @media only screen and (min-width: 700px) {
+            //background-image: url("../images/mike-kenneally-46284-unsplash.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    
+    main {
+        width: 100vw;
+        background: $panelBackground;
+        @media only screen and (min-width: 700px) {
+            width: 700px;
+            //box-shadow: 20px 20px 15px 1px darken($color: $ccGray, $amount: 20%);
+            margin: auto;
+            margin: 10px auto;
+        }
+    }
+    
+    header {
+        background: $offWhite;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "header-logo header-subheadings";
+        img {
+            grid-area: header-logo;
+            width: 30vw;
+            max-width: 200px;
+            justify-self: end;
+            margin: 6px 10px 6px 0;
+        }
+        .subheadings {
+            margin-left: 10px;
+            grid-area: header-subheadings;
+            line-height: 1.2rem;
+            display: grid;
+            color: white;
+            text-transform: uppercase;
+            align-self: center;
+            transform: translateY(0.1rem);
+            font-weight: bold;
+            font-size: 1rem;
+            @media screen and (min-width: 500px) {
+                font-size: 1.6rem;
+                line-height: 1.8rem;
+            }
+            @media screen and (min-width: 700px) {
+                font-size: 1.8rem;
+                line-height: 2rem;
+            }
+        }
+    }
+    
+    section {
+        border: 6px solid;
+        &:nth-child(even) {
+            border-color: $ccRed;
+        }
+        &:nth-child(odd) {
+            border-color: $ccGray;
+        }
+    }
+    
+    .panel--title {
+        text-transform: uppercase;
+        transform: skew(-15deg);
+        font-family: Bangers;
+        font-size: var(--panelTitle__fontSize);
+    }
+    
+    i {
+        padding: 1px 3px;
+        background: $ccGray;
+        color: white;
+        font-size: 2rem;
+        @media screen and (min-width: 500px) {
+            font-size: 2.5rem;
+        }
+        @media screen and (min-width: 600px) {
+            font-size: 3rem;
+        }
+    }
+    
+    .whenWhere {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "map map times";
+        grid-template-rows: auto;
+        .map {
+            grid-area: map;
+            object-fit: fit;
+            width: 100%;
+        }
+        .times {
+            grid-area: times;
+            background-color: var(--colour-ccRed);
+            display: grid;
+            font-size: 1rem;
+            @media screen and (min-width: 500px) {
+                font-size: 1.2rem;
+            }
+            @media screen and (min-width: 650px) {
+                font-size: 1.4rem;
+            }
+            div {
+                justify-self: center;
+            }
+            span {
+                text-align: center;
+                width: 100%;
+            }
+            .times-days {
+                font-weight: bold;
+            }
+        }
+        .times-content {
+            align-self: center;
+            justify-self: center;
+        }
+        .address-container {
+            grid-area: map;
+            justify-self: end;
+            width: 100%;
+            height: 100%;
+            align-self: end;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.7) 40%);
+            display: grid;
+            justify-content: end;
+            align-content: center;
+        }
+        address {
+            text-transform: capitalize;
+            color: $ccGray;
+            font-weight: bold;
+            text-align: right;
+            padding-right: 12px;
+            line-height: 1.2em;
+            font-size: 1rem;
+            @media only screen and (min-width: 400px) {
+                font-size: 1.4rem;
+            }
+            @media only screen and (min-width: 600px) {
+                font-size: 1.6rem;
+            }
+        }
+        .panel--title {
+            grid-column: 1 / -1;
+            grid-row: 1 / -1;
+            z-index: 10;
+            align-self: end;
+            margin-bottom: -6px;
+            background: $ccRed;
+            justify-self: start;
+            margin-left: -8px;
+            @media screen and (min-width: 700px) {
+                &:before {
+                    content: "";
+                    width: 10px;
+                    height: 100%;
+                    background: #eee;
+                    position: absolute;
+                    transform: skew(15deg);
+                    left: -8px;
+                    top: 0;
+                }
+            }
+            .panel--whenWhere--title {
+                transform: skew(15deg);
+            }
+        }
+    }
+    
+    .social {
+        display: grid;
+        grid-template-areas: "left right";
+        grid-template-columns: 1fr 1fr;
+        img {
+            object-fit: cover;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: block;
+            &:nth-child(1) {
+                border-right: var(--colour-ccGray) 3px solid;
+            }
+            &:nth-child(2) {
+                border-left: var(--colour-ccGray) 3px solid;
+            }
+        }
+        .left-panel {
+            grid-area: left;
+        }
+        .right-panel {
+            grid-area: right;
+        }
+        .fbStatus {
+            grid-area: left;
+            justify-self: center;
+            align-self: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: black;
+            margin: 6px 9px 6px 6px;
+            padding: 3px;
+            //height: 80%;
+            border-radius: 2%;
+            font-size: var(--panelBody__fontSize);
+            @include xs {
+                font-size: 1rem;
+            }
+        }
+        .fa-facebook,
+        .fa-instagram {
+            border-radius: 10%;
+        }
+        a {
+            justify-self: center;
+            align-self: end;
+        }
+        footer {
+            grid-column: 1 / -1;
+            grid-row: 1 / -1;
+            align-self: end;
+            display: flex;
+        }
+    }
+    
+    .eventsMenu {
+        display: grid;
+        grid-template-areas: "events events shake shake shake" "events events menu menu menu";
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto 1fr;
+        background: white;
+        .panel--events--title {
+            transform: skew(15deg);
+        }
+        .panel--footer--title {
+            grid-area: events;
+            justify-self: center;
+            align-self: end;
+            transform: skew(-15deg);
+            background: $ccRed;
+            padding: 2px 8px 2px 6px;
+            font-size: var(--panelTitle__fontSize);
+        }
+        .events {
+            grid-area: events;
+            display: flex;
+            flex-direction: column;
+            color: black;
+            .event {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                grid-template-areas: "date body";
+                border-bottom: 6px solid $ccRed;
+                .eventDate {
+                    grid-area: date;
+                    background: $ccRed;
+                    text-align: center;
+                    color: $offWhite;
+                    .eventDateDay {
+                        font-size: 1.5rem;
+                    }
+                    .eventDateMonth {
+                        text-transform: uppercase;
+                    }
+                }
+                .eventBody {
+                    grid-area: body;
+                    padding: 3px;
+                }
+                &:last-child {
+                    border-bottom: none;
+                    height: 100%;
+                }
+            }
+        }
+        .events:empty:after {
+            content: "Coming soon ... Events listings";
+            color: black;
+        }
+        .panel--events--title {
+            //grid-area: events;
+            align-self: end;
+            justify-self: center;
+            background: $ccRed;
+            font-family: Bangers;
+            font-size: var(--panelTitle__fontSize);
+            padding-top: 1px;
+            margin-bottom: -4px;
+            z-index: 0;
+        }
+        .shake {
+            grid-area: shake;
+            text-transform: uppercase;
+            border-left: 6px $ccRed solid;
+            text-align: center;
+            padding-bottom: 20px;
+            padding-top: 6px;
+            div:nth-child(1) {
+                font-weight: bold;
+                font-size: 1rem;
+                font-family: Bangers;
+                color: $coffee;
+            }
+            div:nth-child(2) {
+                font-size: 1.4rem;
+                color: $coffeeCupLid;
+            }
+        }
+        .panel--title {
+            grid-area: shake;
+            justify-self: center;
+            align-self: end;
+            transform: translateY(15px) skew(-15deg);
+            background: $ccRed;
+            padding: 2px 8px 2px 6px;
+            .panel--menu--title {
+                transform: skew(15deg);
+            }
+        }
+        .menu {
+            grid-area: menu;
+            border-top: 6px $ccRed solid;
+            border-left: 6px $ccRed solid;
+            color: $coffeeCupLid;
+        }
+        .menuItems {
+            padding: 20px 6px 6px 6px;
+            .menuItemHeader {
+                font-weight: bold;
+                color: $coffee;
+            }
+        }
+    }
+    
+    .about {
+        font-size: var(--panelBody__fontSize);
+        display: grid;
+        grid-template-areas: "about";
+        .aboutContent {
+            grid-area: about;
+            p {
+                color: black;
+                padding: 6px;
+                margin: 0;
+                &:last-child {
+                    margin-bottom: 18px;
+                }
+            }
+        }
+        .panel--title {
+            grid-area: about;
+            justify-self: end;
+            align-self: end;
+            background: $ccRed;
+            position: relative;
+            transform: skew(-15deg);
+            padding: 0 0 0 4px;
+            margin-bottom: -4px;
+            .panel--about--title {
+                transform: skew(15deg);
+                &:after {
+                    content: "";
+                    width: 10px;
+                    height: 1.5rem;
+                    background: $ccRed;
+                    position: absolute;
+                    right: 0;
+                    margin-top: -1.5rem;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+    
+    .test {
+        margin-top: -30px;
+    }
+    
+    .logo {
+        z-index: 999;
+    }
