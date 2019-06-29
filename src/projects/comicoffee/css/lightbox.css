@@ -94,12 +94,12 @@
 .portfolio-lightbox__content {
   position: relative;
   width: 80vw;
-  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
       align-self: center;
-  justify-self: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  display: -ms-grid;
+  display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
