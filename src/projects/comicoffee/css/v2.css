@@ -614,7 +614,7 @@ i {
   position: relative;
   -webkit-transform: skew(-15deg);
           transform: skew(-15deg);
-  padding: 0 4px 0 4px;
+  padding: 0 0 0 4px;
   margin-bottom: -4px;
 }
 
@@ -623,14 +623,13 @@ i {
           transform: skew(15deg);
 }
 
-.about .panel--title .panel--about--title:after {
+.about .panel--title .panel--about--title:before {
   content: "";
   width: 10px;
   height: 1.5rem;
   background: #A81715;
   position: absolute;
   right: 0;
-  margin-top: -1.5rem;
   z-index: -1;
 }
 
