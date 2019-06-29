@@ -50,6 +50,7 @@ body {
   background: #eee;
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.8rem;
+  padding-bottom: 20px;
 }
 
 @media (min-width: 425px) {
@@ -260,6 +261,12 @@ i {
           justify-content: end;
   -ms-flex-line-pack: center;
       align-content: center;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .whenWhere .address-container {
+    background: rgba(255, 255, 255, 0.8);
+  }
 }
 
 .whenWhere address {
@@ -607,7 +614,7 @@ i {
   position: relative;
   -webkit-transform: skew(-15deg);
           transform: skew(-15deg);
-  padding: 0 0 0 4px;
+  padding: 0 4px 0 4px;
   margin-bottom: -4px;
 }
 
@@ -646,5 +653,13 @@ i {
   .logo {
     z-index: 999;
   }
+}
+
+*[href^="tel"] {
+  color: inherit;
+  /* Inherit text color of parent element. */
+  text-decoration: none;
+  /* Remove underline. */
+  /* Additional css `propery: value;` pairs here */
 }
 /*# sourceMappingURL=v2.css.map */
