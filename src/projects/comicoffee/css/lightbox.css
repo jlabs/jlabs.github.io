@@ -89,6 +89,7 @@
   max-width: calc(100vw-1.6rem);
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
+  height: 100vh;
 }
 
 .portfolio-lightbox__content {
