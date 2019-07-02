@@ -626,11 +626,17 @@ i {
 .about .panel--title .panel--about--title:before {
   content: "";
   width: 10px;
-  height: 1.5rem;
+  height: 1.8rem;
   background: #A81715;
   position: absolute;
   right: 0;
   z-index: -1;
+}
+
+@media screen and (min-width: 550px) {
+  .about .panel--title .panel--about--title:before {
+    height: 2rem;
+  }
 }
 
 @media screen and (min-width: 700px) {

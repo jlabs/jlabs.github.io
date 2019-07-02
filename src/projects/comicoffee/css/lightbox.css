@@ -18,6 +18,8 @@
   -ms-scroll-snap-type: x proximity;
       scroll-snap-type: x proximity;
   grid-auto-columns: calc(40% - 20px * 2);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @media screen and (min-width: 500px) {
@@ -35,6 +37,10 @@
 .portfolio:before, .portfolio:after {
   content: "";
   width: 10px;
+}
+
+.portfolio:-webkit-scrollbar {
+  display: none;
 }
 
 .portfolio__item {
